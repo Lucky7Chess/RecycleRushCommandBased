@@ -4,23 +4,19 @@ package org.usfirst.frc.team293.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc.team293.robot.Robot;
-
+import org.usfirst.frc.team293.robot.subsystems.DriveTrain;
 /**
  *
  */
-public class ExampleCommand extends Command {
-
-    public ExampleCommand() {
-        // Use requires() here to declare subsystem dependencies yeah
-        requires(Robot.exampleSubsystem);
-    }
-
+public class DriveWithJoysticks extends Command {
+	
     // Called just before this Command runs the first time
     protected void initialize() {
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    DriveTrain.takeJoystickInputs(Robot.oi.getLeftJoystick(),Robot.oi.getRightJoystick());
     }
 
     // Make this return true when this Command no longer needs to run execute()
